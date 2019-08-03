@@ -88,6 +88,16 @@ namespace BaoTaApi.BtApi
         #endregion
 
         #region 网站管理
+            /// <summary>
+        /// 获取网站列表
+        /// </summary>
+        /// <param name="limit">取回的数据行数 [必传]</param>
+        /// <param name="p">当前分页 [可选]</param>
+        /// <param name="type">分类标识, -1: 分部分类 0: 默认分类 [可选]</param>
+        /// <param name="order">排序规则 使用 id 降序：id desc 使用名称升序：name desc [可选]</param>
+        /// <param name="tojs">分页 JS 回调,若不传则构造 URI 分页连接 [可选]</param>
+        /// <param name="search">搜索内容 [可选]</param>
+        /// <returns></returns>
         public String getDataSite(int limit, int p = 1, int type = -1,String order = "id desc", String tojs = "get_site_list", String search = "")
         {
             String url = this.BT_PANEL + "/data?action=getData&table=sites";
